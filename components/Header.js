@@ -4,14 +4,23 @@ import {
   SearchIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/basketSlice";
 
-const Header = () => {
+function Header() {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const items = useSelector(selectItems);
+
   return (
     <header>
       {/* top nav */}
       <div className="flex items-center flex-grow py-[4px] sm:p-1 sm:py-2 bg-amazon_blue">
         <div className="flex items-center flex-grow mt-2 -ml-[11px] sm:flex-grow-0">
           <Image
+            onClick={() => router.push("/")}
             src="https://links.papareact.com/f90"
             width={150}
             height={40}
@@ -30,17 +39,20 @@ const Header = () => {
 
         {/* Right */}
         <div className="flex items-center mr-1 space-x-4 text-sm text-white sm:space-x-6 sm:mx-6 whitespace-nowrap ">
-          <div className="link">
-            <p>Hello azad bhai</p>
+          <div onClick={!session ? signIn : signOut} className="link">
+            <p>{session ? `Hello ${session.user.name}` : "Sign In"}</p>
             <p className="font-semibold sm:font-bold">Account and Lists</p>
           </div>
           <div className="link">
             <p>Returns</p>
             <p className="font-semibold sm:font-bold">& Orders</p>
           </div>
-          <div className="relative flex items-center link">
+          <div
+            onClick={() => router.push("/checkout")}
+            className="relative flex items-center link"
+          >
             <span className="absolute top-0 right-0 flex items-center justify-center w-4 h-4 font-bold text-black bg-yellow-400 rounded-full md:right-10 ">
-              0
+              {items.length}
             </span>
             <ShoppingCartIcon className="h-8 md:h-10" />
             <p className="hidden mt-2 font-semibold sm:font-bold md:inline">
@@ -68,6 +80,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
