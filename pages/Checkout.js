@@ -62,7 +62,7 @@ const Checkout = () => {
         </div>
 
         {/* right */}
-        <div className="flex flex-col bg-white p-10 shadow-md">
+        <div className="flex flex-col p-10 bg-white shadow-md">
           {items.length > 0 && (
             <>
               <h2 className="whitespace-nowrap">
