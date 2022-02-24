@@ -76,7 +76,7 @@ function Header() {
         <p className="hidden link lg:inline-flex">Prime</p>
         <p className="hidden link lg:inline-flex">Buy Again</p>
         <p className="hidden link lg:inline-flex">Shopper Toolkit</p>
-        <p className="hidden link lg:inline-flex">Health & Personal Care</p>
+        <p className="hidden link lg:inline-flex">Health & Care</p>
       </div>
     </header>
   );
