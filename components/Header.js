@@ -48,7 +48,7 @@ function Header() {
             <p className="font-semibold sm:font-bold">& Orders</p>
           </div>
           <div
-            onClick={() => router.push("/checkout")}
+            onClick={() => router.push("/productDetails")}
             className="relative flex items-center link"
           >
             <span className="absolute top-0 right-0 flex items-center justify-center w-4 h-4 font-bold text-black bg-yellow-400 rounded-full md:right-10 ">
