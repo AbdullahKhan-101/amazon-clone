@@ -34,11 +34,17 @@ const Product = ({ title, id, price, description, category, image }) => {
   };
 
   return (
-    <div className="relative z-30 flex flex-col p-10 m-3 bg-white md:m-5">
+    <div className="relative z-30 flex flex-col p-10 m-3 transition duration-300 ease-out bg-white md:m-5 hover:shadow-lg ">
       <p className="absolute text-xs italic text-gray-400 top-2 right-2">
         {category}
       </p>
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image
+        className="transition duration-200 ease-out hover:scale-105"
+        src={image}
+        height={200}
+        width={200}
+        objectFit="contain"
+      />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
         {Array(rating)

@@ -1,9 +1,12 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import ReactCurrencyFormatter from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { addToBasket, removeFromBasket } from "../slices/basketSlice";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const CheckoutProduct = ({
   id,
   title,
@@ -15,6 +18,10 @@ const CheckoutProduct = ({
   hasPrime,
 }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const addItemToBasket = () => {
     const product = {
