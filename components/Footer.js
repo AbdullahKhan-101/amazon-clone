@@ -55,8 +55,8 @@ const Footer = () => {
 
       {/* Bottom footer */}
       <div className="bg-amazon_blue">
-        <div className="py-5 mx-auto flex text-sm max-w-2xl space-x-3">
-          <div className="flex space-x-3 mx-auto md:mx-0">
+        <div className="flex max-w-2xl py-5 mx-auto space-x-3 text-sm">
+          <div className="flex mx-auto space-x-3 md:mx-0">
             <p>Condition of use</p>
             <p>© 1996-2022</p>
           </div>
