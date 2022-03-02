@@ -101,12 +101,7 @@ const ProductDetails = () => {
         {/* right */}
         <div className="flex flex-col p-10 bg-white shadow-md">
           {items.length > 0 && (
-            <div
-              className=""
-              data-aos="fade-up"
-              data-aos-delay="400"
-              data-aos-duration="1200"
-            >
+            <div className="">
               <h2 className="whitespace-nowrap">
                 Subtotal ({items.length} items) :
                 <span className="font-bold">
